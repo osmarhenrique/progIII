@@ -20,7 +20,7 @@
 			<div>
 				<form mmethod="POST" action="contato.php">
 					<div>
-						<input type="text" name="nome" placeholder="Digite seu nome">
+						<input type="text" name="nome" placeholder="Digite seu nome" required="Obrigatorio">
 					</div>
 					<div>
 						<input type="text" name="apelido" placeholder="Digite seu apelido">
@@ -29,7 +29,7 @@
 						<input type="text" name="telefone" placeholder="Digite seu telefone">
 					</div>
 					<div>
-						<input type="email" name="email" placeholder="Digite seu email">
+						<input type="email" name="email" placeholder="Digite seu email" required="Obrigatorio">
 					</div><br>					
 					<div>
 						<button type="submit">Salvar</button>
