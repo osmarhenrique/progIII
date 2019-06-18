@@ -1,0 +1,10 @@
+BD: avaliacao
+
+CREATE TABLE `contatos` (
+ `id` int(3) NOT NULL AUTO_INCREMENT,
+ `nome` varchar(30) DEFAULT NULL,
+ `apelido` varchar(30) NOT NULL,
+ `telefone` varchar(30) NOT NULL,
+ `email` varchar(30) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1

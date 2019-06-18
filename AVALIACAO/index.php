@@ -1,5 +1,4 @@
-﻿
-<?php
+﻿<?php
 	require_once('conexao.php');
 	$lista = $conn->query("SELECT * FROM contatos");	
 ?>
@@ -18,7 +17,7 @@
 				<h3>Cadastre-se para ser avaliado</h3>
 			</header>
 			<div>
-				<form mmethod="POST" action="contato.php">
+				<form method="POST" action="contato.php">
 					<div>
 						<input type="text" name="nome" placeholder="Digite seu nome" required="Obrigatorio">
 					</div>
@@ -33,25 +32,27 @@
 					</div><br>					
 					<div>
 						<button type="submit">Salvar</button>
-					</div>	
+					</div>
+					<div>
+						<table border="1">
+		     			<tr>
+					      <td>Código</td>
+					      <td>Nome</td>
+					      <td>Apelido</td>
+					      <td>Telefone</td>
+					      <td>E-mail</td>
+		    			</tr>
+		    			<?php while($dado = $lista->fetch(PDO::FETCH_ASSOC)) { ?>
+		    			<tr>
+					      <td><?php echo $dado['id']; ?></td>
+					      <td><?php echo $dado['nome']; ?></td>
+					      <td><?php echo $dado['apelido']; ?></td>
+					      <td><?php echo $dado['telefone']; ?></td>
+					      <td><?php echo $dado['email']; ?></td> 
+		    			<?php } ?>
+		  					</table>
+		  				</div>	
 				</form>
-				 
-				<table border="1">
-    				<tr>
-      				<td>Código</td>
-      				<td>Nome</td>
-      				<td>Telefone</td>
-      				<td>E-mail</td>
-    				</tr>
-    			<?php while($dado = $lista->fetch(PDO::FETCH_ASSOC)) { ?>
-    				<tr>
-      				<td><?php echo $dado['codigo']; ?></td>
-      				<td><?php echo $dado['nome']; ?></td>
-      				<td><?php echo $dado['telefone']; ?></td>
-      				<td><?php echo $dado['email']; ?></td>      
-  					</tr>
-				<?php } ?>
-  				</table>
 			</div>
 		</section>
 	</main>
